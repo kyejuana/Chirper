@@ -8,20 +8,36 @@ const App = () => {
   const [content, setContent] = useState("");
   const [timestamp, setTimestamp] = useState("");
   const [chirps, setChirps] = useState([
-    { username: "Tristan", content: "I don't want to go to school. I'm sleepy!", timestamp },
-    { username: "Garrett", content: "What it do?", timestamp },
-    { username: "Jake", content: "I was on vacay and came back to help you finish this lab :-P", timestamp},
-    { username: "Josh", content: "It's 5 o'clock somewhere!", timestamp },
-    { username: "KyeJuana", content: "I feel deafeated! Stupid timestamp! I'm going to miss Jake :'(", timestamp },
+    { username: "Tristan", 
+      content: "I don't want to go to school. I'm sleepy!", 
+      timestamp:  moment().format("MMMM Do YYYY, h:mm:ss a") 
+    },
+    { username: "Garrett", 
+      content: "What it do?", 
+      timestamp: moment().format("MMMM Do YYYY, h:mm:ss a") 
+    },
+    { username: "Jake", 
+      content: "I was on vacay and came back to help you finish this lab :-P", 
+      timestamp: moment().format("MMMM Do YYYY, h:mm:ss a") 
+    },
+    { username: "Josh", 
+      content: "It's 5 o'clock somewhere!", 
+      timestamp: moment().format("MMMM Do YYYY, h:mm:ss a") 
+    },
+
   ]);
 
   const handleUsernameChange = (username) => setUsername(username);
   const handleContentChange = (content) => setContent(content);
   const handleClick = () => {
-    setChirps([...chirps, { username: username, content: content, timestamp: moment().format('MMMM Do YYYY, h:mm:ss a') }]);
+    setChirps([...chirps, { 
+        username: username, 
+        content: content, timestamp: 
+        moment().format("MMMM Do YYYY, h:mm:ss a") 
+    }]);
   };
    
-  //const time = Moment().format("hh:mm a")
+  //const time = Moment().format("MMMM Do YYYY, h:mm:ss a")
 
   return (
     <div>
@@ -47,12 +63,12 @@ const App = () => {
         onChange={(e) => handleContentChange(e.target.value)}
       ></textarea>
         <div className='button'>
-        <button type="submit" onClick={handleClick}>~Post~</button>  
+        <button type="submit" onClick={handleClick}>~ Post Chirp ~</button>  
         </div>
-        
+     
       {chirps.map((chirp) => {
-        return <Chirp username={chirp.username} content={chirp.content} />;
-        
+        return <Chirp username={chirp.username} content={chirp.content} timestamp={chirp.timestamp}/>;
+  
 
       })}
       

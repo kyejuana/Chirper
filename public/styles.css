@@ -38,7 +38,8 @@ button {
     font-family: papyrus;
     font-weight: 100px;
 }
-chirp {
+#chirp {
     display: flex;
+    width: 65rem;
     flex-wrap: wrap;
 }
