@@ -1,0 +1,44 @@
+body  {
+    background-color: lavenderblush;
+   
+
+}
+
+h1 {
+    text-align: center;
+    background-color: rgb(137, 6, 177);
+    color: whitesmoke;
+    font-family: papyrus;
+    padding: 25px;
+    border: 2px;
+    border-style: ridge;
+    border-color: silver;
+    outline-style: ridge;
+    outline-color: rgb(22, 22, 204);
+    text-transform: capitalize;
+    text-shadow: 2px 2px 5px black;
+    background-image: url('https://www.google.com/url?sa=i&url=http%3A%2F%2Fclipart-library.com%2Ffree%2Fblue-bird-transparent-background.html&psig=AOvVaw3y3l0fBZkg31D-rtHiQ5Yk&ust=1634663039219000&source=images&cd=vfe&ved=0CAsQjRxqFwoTCJi7rsC41PMCFQAAAAAdAAAAABAP');
+    background-position: center left;
+    background-repeat: no-repeat;
+    background-size: 75px;
+    background-image: radial-gradient(square,black, white)
+
+}
+
+footer {
+    padding: 110px;
+    background-image:  url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLY73obDyKRriOmYAL66Kx-BRxJR4lBK0dDhxMK6ESj979s5R5apYiWAd910nhq5bdy1k&usqp=CAU);
+    background-position: left bottom;
+    background-repeat: no-repeat, repeat;
+    opacity: .5;
+     
+}
+button {
+    color: blueviolet;
+    font-family: papyrus;
+    font-weight: 100px;
+}
+chirp {
+    display: flex;
+    flex-wrap: wrap;
+}
