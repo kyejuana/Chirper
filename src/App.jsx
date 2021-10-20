@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Chirp from "./components/Chirp";
+import { v4 as uuidv4 } from 'uuid';
 // import Moment from 'react-moment';
 import * as moment from 'moment';
 
@@ -8,22 +9,31 @@ const App = () => {
   const [content, setContent] = useState("");
   const [timestamp, setTimestamp] = useState("");
   const [chirps, setChirps] = useState([
-    { username: "Tristan", 
+    { key: uuidv4(),
+      username: "Tristan", 
       content: "I don't want to go to school. I'm sleepy!", 
       timestamp:  moment().format("MMMM Do YYYY, h:mm:ss a") 
     },
-    { username: "Garrett", 
+    {
+      username: "Garrett", 
       content: "What it do?", 
       timestamp: moment().format("MMMM Do YYYY, h:mm:ss a") 
     },
-    { username: "Jake", 
+    { 
+      username: "Jake", 
       content: "I was on vacay and came back to help you finish this lab :-P", 
       timestamp: moment().format("MMMM Do YYYY, h:mm:ss a") 
     },
-    { username: "Josh", 
+    { key: uuidv4(),
+      username: "Josh", 
       content: "It's 5 o'clock somewhere!", 
       timestamp: moment().format("MMMM Do YYYY, h:mm:ss a") 
     },
+    { key: uuidv4(),
+        username: "KyeJuana", 
+        content: "I feel so defeated. Stupid timestamp! I'm going to miss Jake :'(  I need a drink!", 
+        timestamp: moment().format("MMMM Do YYYY, h:mm:ss a") 
+      },
 
   ]);
 
@@ -31,6 +41,7 @@ const App = () => {
   const handleContentChange = (content) => setContent(content);
   const handleClick = () => {
     setChirps([...chirps, { 
+        key: uuidv4(),
         username: username, 
         content: content, timestamp: 
         moment().format("MMMM Do YYYY, h:mm:ss a") 
@@ -65,10 +76,10 @@ const App = () => {
         <div className='button'>
         <button type="submit" onClick={handleClick}>~ Post Chirp ~</button>  
         </div>
-     
+        
       {chirps.map((chirp) => {
         return <Chirp username={chirp.username} content={chirp.content} timestamp={chirp.timestamp}/>;
-  
+        
 
       })}
       

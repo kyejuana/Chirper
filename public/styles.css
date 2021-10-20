@@ -1,7 +1,6 @@
 body  {
     background-color: lavenderblush;
    
-
 }
 
 h1 {
@@ -37,9 +36,11 @@ button {
     color: blueviolet;
     font-family: papyrus;
     font-weight: 100px;
+
 }
-#chirp {
-    display: flex;
-    width: 65rem;
-    flex-wrap: wrap;
+#timeline-card {
+
+    background-color: rgb(202, 153, 202);
+    margin-top: 10px;
+
 }
